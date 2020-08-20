@@ -1,0 +1,26 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "bookshelf",
+      "settings": {
+        "client": "mysql",
+        "host": "${process.env.INSTANCE_CONNECTION_NAME}",
+        "port": "3306",
+        "database": "${process.env.DATABASE_NAME}",
+        "username": "${process.env.DATABASE_USERNAME}",
+        "password": "${process.env.DATABASE_PASSWORD}"
+      }
+    },
+    "options": {
+      "ssl": false,
+      "pool": {
+        "min": 0,
+        "max": 15,
+        "idleTimoutMillis": 30000,
+        "createTimeoutMillis": 30000,
+        "acquireTimeoutMillis": 30000
+      }
+    }
+  }
+}
