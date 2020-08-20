@@ -4,18 +4,19 @@ ENV PORT 1337
 ENV HOST 0.0.0.0
 ENV NODE_ENV production
 
-# create app dir
+# Create app directory
 RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app 
+WORKDIR /usr/src/app
 
-# install deps
+# Install app dependencies
 COPY package*.json /usr/src/app/
 COPY yarn.lock /usr/src/app/
 RUN yarn install
 
-COPY . /usr/src/app 
+# Bundle app source
+COPY . /usr/src/app
 
 RUN yarn build
 EXPOSE 1337
 
-CMD ["yarn", "start"]
+CMD [ "yarn", "start" ]
