@@ -9,6 +9,9 @@
     "enabled": false
   },
   "admin": {
-    "autoOpen": false
+    "autoOpen": false,
+    "auth": {
+      "secret": "${process.env.ADMIN_JWT_SECRET} || j6k6zJqG7JN9kJ7fhtOwnZ4NEi9g+j4fKJ0HeWqObqlqqoWVDMczyW1hYM64gvwUSy0tHmd7xOykY+K+Qeiemg=="
+    }
   }
 }
